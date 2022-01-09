@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gorilla</title>
+    <link rel="icon" href="/img/gorilla.png">
+    <link rel="stylesheet" href="/css/global.css">
+    {{#if signin}}
+    <link rel="stylesheet" href="/css/signin.css">
+    {{/if}}
+    {{#if workout}}
+    <link rel="stylesheet" href="/css/workout.create.css">
+    {{/if}}
+</head>
+
+<body>
+    {{>header}}
+    {{{body}}}
+
+    <script src="/js/global.js"></script>
+</body>
+
+</html>
