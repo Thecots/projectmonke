@@ -6,10 +6,12 @@ header{
   background-color: #1a1b1c;
 }
 
-
+button{
+  cursor: pointer;
+}
 
 main{
-  margin: 50px auto;
+  margin: 25px auto;
   max-width: 100%;
   width: 1500px;
   height: fit-content;
@@ -45,7 +47,9 @@ form > h1::before{
 }
 
 /* first */
-section:nth-child(1) form{
+section:nth-child(1) form,
+.interface
+{
   display: grid;
   grid-template-rows: repeat(2, auto);
   gap: 25px;
@@ -62,7 +66,9 @@ section form button{
   justify-self: flex-end;
 }
 
-section:nth-child(1) form > div{
+section:nth-child(1) form > div,
+.interface > div
+{
   width: 100%;
   height: 100%;
   display: flex;
@@ -70,7 +76,9 @@ section:nth-child(1) form > div{
   gap: 10px;
 }
 
-section:nth-child(1) form div span{
+section:nth-child(1) form div span,
+.interface div span
+{
   width: 100%;
   height: 60px;
   display: grid;
@@ -81,18 +89,24 @@ section:nth-child(1) form div span{
 
 }
 
-section:nth-child(1) form div span img{
+section:nth-child(1) form div span img,
+.interface div span img
+{
   width: 40px;
   justify-self: center;
   align-self: center;
 }
-section:nth-child(1) form div span h1{
+section:nth-child(1) form div span h1,
+.interface div span h1
+{
   align-self: center;
   margin-left: 5px;
   font-weight: 400;
   letter-spacing: 1px;
 }
-section:nth-child(1) form div span input{
+section:nth-child(1) form div span input,
+.interface div span input
+{
   text-align: center;
   outline: none;
   font-size: 25px;
@@ -101,19 +115,32 @@ section:nth-child(1) form div span input{
   border-left: 1px solid rgba(128, 128, 128, 0.301);
 }
 
+
+.interface > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.interface div span p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.interface{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 7px;
+    margin-top: 14px;
+}
+
 /* input buttons */
 input[type=number]::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
   opacity: 1;
-  -webkit-background-origin: red;
 }
 
 /* second */
-section:nth-child(2){
-}
-
-section:nth-child(2) form{
-
-}
 
 section:nth-child(2) form div{
   margin-top: 20px;
@@ -147,14 +174,24 @@ section:nth-child(2) form div span img{
   width: 100px;
   filter: grayscale(1);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.1s;
+}
+
+section:nth-child(2) form div span img:active{
+  transform: scale(0.95);
 }
 
 section:nth-child(2) form div span img:hover{
   filter: grayscale(0);
-  transform: scale(1.05);
 }
 
+section:nth-child(2) form div span img:active{
+  filter: grayscale(0);
+}
+
+section:nth-child(2) form div span.active > img{
+  filter: grayscale(0);
+}
 
 .moveLeft{
   margin-left: -100%;
@@ -164,4 +201,127 @@ section:nth-child(2) form div span img:hover{
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.interface2{
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+.interface2 > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.interface2 > div {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.interface2 > div div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.interface2 > div h1{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.interface2 div div span img {
+  width: 100px;
+}
+
+.interface2 div div span{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* media queries */
+
+
+/* section 2 */
+@media (max-width: 920px) {
+  section:nth-child(2) form div h1{
+    font-size: 25px;
+  }
+  section:nth-child(2) form div div{
+    grid-template-columns: repeat(5,120px);
+    gap: 15px;
+  }
+  section:nth-child(2) form div span p{
+    font-size: 13px;
+  }
+  section:nth-child(2) form div span img{
+    width: 90px;
+  }
+}
+
+@media (max-width: 680px) {
+  section:nth-child(2) form div h1{
+    font-size: 20px;
+  }
+  section:nth-child(2) form div div{
+    grid-template-columns: repeat(5,99px);
+    gap: 1px;
+  }
+  section:nth-child(2) form div span p{
+    font-size: 11px;
+  }
+  section:nth-child(2) form div span img{
+    width: 60px;
+  }
+}
+
+@media (max-width: 680px) {
+  section form h1{
+    font-size: 25px;
+  }
+
+  section form h1::before{
+    height: 2px;
+  }
+
+  section:nth-child(2) form div h1{
+    font-size: 20px;
+  }
+  section:nth-child(2) form div div{
+    grid-template-columns: repeat(5,99px);
+    gap: 1px;
+  }
+  section:nth-child(2) form div span p{
+    font-size: 11px;
+  }
+  section:nth-child(2) form div span img{
+    width: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  section form h1{
+    font-size: 25px;
+  }
+
+  section form h1::before{
+    height: 2px;
+  }
+
+  section:nth-child(2) form div h1{
+    font-size: 20px;
+  }
+  section:nth-child(2) form div div{
+    grid-template-columns: repeat(auto-fit, minmax(110px,1fr));
+    gap: 15px;
+  }
+  section:nth-child(2) form div span p{
+    font-size: 12px;
+  }
+  section:nth-child(2) form div span img{
+    width: 70px;
+  }
 }

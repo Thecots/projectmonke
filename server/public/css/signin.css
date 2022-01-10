@@ -6,6 +6,10 @@
   --c-border: #dadce0;
 }
 
+body{
+  overflow: hidden;
+}
+
 body > img{
   z-index: -1;
   position: absolute;
